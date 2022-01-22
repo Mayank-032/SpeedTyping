@@ -4,55 +4,64 @@ let readOnlyTextArea = document.getElementById("myReadOnlyTextArea");
 readOnlyTextArea.value = str;
 
 let writeOnlyTextArea = document.getElementById("myWriteOnlyTextArea");
-writeOnlyTextArea.addEventListener("keypress", onKeyPress);
+let control_Buttons = document.getElementById("controlButtons");
 
-let display = document.getElementById("time");
-
-function onKeyPress(event){
-    console.log(event.key);
+let timeLimit = document.getElementById("chooseTime").value;
+document.getElementById("chooseTime").onchange = function(){
+    timeLimit = this.value;
 }
 
+let minute = 0;
+let second = 0;
+let millisecond = 0;
+let time;
 
-let minutes = document.getElementById("minutes").textContent;
-let seconds = document.getElementById("seconds").textContent;
+function start() {
+    pause();
+    time = setInterval(() =>{timer();}, 10);
+}
 
-let actualminutes = minutes;
-let actualseconds = seconds;
+function pause(){
+    clearInterval(time);
+}
 
-function startTimer(){
-    if(minutes == 0){
-        if(seconds == 1){
-            display.textContent = actualminutes+":"+actualseconds;
-            writeOnlyTextArea.disabled = true;
+function reset() {
+    pause();
+    
+    minute = 0;
+    second = 0;
+    millisecond = 0;
+    document.getElementById("minute").innerText = "00";
+    document.getElementById("second").innerText = "00";
+}
 
-            clearInterval(myTimer);
-            return;
+function timer() {
+    if(timeLimit > 2){
+        if(second >= timeLimit){
+            pause();
+            reset();
+        }
+    }else{
+        if(minute >= timeLimit){
+            pause();
+            reset();
         }
     }
 
-    if(seconds == 1){
-        minutes--;
-        seconds = 5;
+    if((millisecond += 10) == 1000){
+        millisecond = 0;
+        second++;
     }
 
-    seconds--;
-
-
-    let minuteStr = "";
-    if(minutes < 10){
-        minuteStr = "0" + minutes; 
-    }else{
-        minuteStr = "" + minutes;
+    if(second == 60){
+        second = 0;
+        minute++;
     }
 
-    let secondStr = "";
-    if(seconds < 10){
-        secondStr = "0" + seconds;
-    }else{
-        secondStr = "" + seconds;
-    }
-    
-
-    display.textContent = minuteStr+":"+secondStr;
+    document.getElementById("minute").innerText = returnData(minute);
+    document.getElementById("second").innerText = returnData(second);
 }
 
+function returnData(data){
+    return data >= 10 ? data : `0${data}`;
+}

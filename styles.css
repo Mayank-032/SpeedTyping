@@ -6,7 +6,7 @@
 }
 
 #myWriteOnlyTextArea{
-    margin-left: 25%;
+    margin-left: 24.8%;
     margin-top: 2%;
     border: 1px solid black;
 }
@@ -17,4 +17,27 @@
 
 #timer #time{
     margin-top: 100px;
+}
+
+#timerOptions{
+    margin-left: 38%;
+    margin-top: 2%;
+}
+
+#controlButtons{
+    margin-left: 29%;
+    margin-top: 2%;
+}
+
+#pause-btn{
+    margin-right: 45px;
+}
+
+#reset-btn{
+    margin-right: 120px;
+}
+
+#chooseTime{
+    border: 2px solid blue;
+    border-radius: 3px;
 }

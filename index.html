@@ -13,20 +13,31 @@
 </head>
 <body>
     <h1>Hey World</h1>
+    <div class="container">
+        <div id="main-content" class="row">
+            <div id="typingAreas" class="col-lg-10">
+                <textarea name="text" id="myReadOnlyTextArea" cols="80" rows="5" readonly></textarea>
+                <textarea name="text" id="myWriteOnlyTextArea" cols="65" rows="2" onclick="start()"></textarea>
+            </div>
 
-    <div id="main-content" class="row">
-        <div id="typingAreas" class="col-lg-10">
-            <textarea name="text" id="myReadOnlyTextArea" cols="80" rows="5" readonly></textarea>
-            <textarea name="text" id="myWriteOnlyTextArea" cols="65" rows="2" onclick="setInterval(startTimer, 1000);"></textarea>
-        </div>
-
-        <div id="timer" class="col-lg-2">
-            <div id="time">
-                <span id="minutes">0</span>:<span id="seconds">5</span>
+            <div id="timer" class="col-lg-2">
+                <div id="time">
+                    <span id="minute">00</span>:<span id="second">00</span>
+                </div>
             </div>
         </div>
-    </div>
 
+        <div id="controlButtons">
+            <button id="pause-btn" class="btn btn-outline-secondary" onclick="pause()">Pause</button>
+            <button id="reset-btn" class="btn btn-outline-danger" onclick="reset()">Reset</button>
+            <select name="chooseTime" id="chooseTime" onchange="SetTimeLimit"> 
+                <option value="15"><span id="minute">00</span>:<span id="second">15</span>
+                <option value="30"><span id="minute">00</span>:<span id="second">30</span>
+                <option value="1"><span id="minute">01</span>:<span id="second">00</span>
+                <option value="2"><span id="minute">02</span>:<span id="second">00</span>
+            </select>
+        </div>
+    </div>
 
 
 
