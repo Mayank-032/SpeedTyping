@@ -29,6 +29,7 @@
 #controlButtons{
     margin-left: 29%;
     margin-top: 2%;
+    margin-bottom: 120px;
 }
 
 #pause-btn{
@@ -52,7 +53,49 @@
     color: rgb(255, 20, 20);
 }
 
+.myTextSpaceIncorrect{
+    background-color: red;
+}
+
 .current_value_property{
     background-color: black;
     color: white;
+}
+
+#displayResult{
+    margin-left: 10%;
+    margin-bottom: 50px;
+    border: 4px solid black;
+    width: 55%;
+    border-radius: 30px;
+}
+
+#main_stats{
+    margin-top: 30px;
+    margin-bottom: 120px;
+}
+
+#share_stats{
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    font-size: 21px;
+    margin-bottom: 25px;
+    color: black;
+}
+
+a:hover{
+    font-size: 21.5px;
+    color: red;
+}
+
+#result_content{
+    margin-top: 45px;
+}
+
+h6{
+    margin-bottom: 27px;
 }
