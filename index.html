@@ -16,8 +16,10 @@
     <div class="container">
         <div id="main-content" class="row">
             <div id="typingAreas" class="col-lg-10">
-                <textarea name="text" id="myReadOnlyTextArea" cols="80" rows="5" readonly></textarea>
-                <textarea name="text" id="myWriteOnlyTextArea" cols="65" rows="2" onclick="start()"></textarea>
+                <div contenteditable="false" class="myReadOnlyTextArea">
+                    HI
+                </div>
+                <textarea name="text" class="myWriteOnlyTextArea" cols="65" rows="2" onkeydown="processCurrentText(event)" onfocus="start()"></textarea>
             </div>
 
             <div id="timer" class="col-lg-2">
@@ -40,7 +42,7 @@
     </div>
 
 
-
+ 
 
 
 
