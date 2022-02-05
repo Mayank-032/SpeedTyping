@@ -4,7 +4,9 @@
     border: 2px solid black;
     background-color: #fff !important;
     width: 600px;
-    height: 100px;
+    height: 200px;
+    /* overflow-y: scroll; */
+    line-height: 2;
 }
 
 .myWriteOnlyTextArea{
@@ -17,8 +19,31 @@
     display: flex;
 }
 
+.circle{
+    border: 3px solid greenyellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    margin-top: 130px;
+}
+
+.timerCircleProperties{
+    border: 3px solid red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    margin-top: 130px;
+}
+
 #timer #time{
-    margin-top: 100px;
+    margin-top: 30%;
+    font-size: 30px;
 }
 
 #timerOptions{
